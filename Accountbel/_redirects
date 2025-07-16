@@ -125,4 +125,4 @@ https://www.account-bel.be/*        /index.html         200
 /mobile/greek/mentions.html      /greek/mentions.html       200
 /m/greek/mentions.html           /greek/mentions.html       200
 /admin/*    /admin/index.html   200
-
+https://account-bel.be/*  https://www.account-bel.be/:splat  301!
