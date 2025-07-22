@@ -1,24 +1,28 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: NaomyDng/accountbel
   branch: main
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
-i18n:
-  structure: multiple_folders
-  locales: [fr, en, nl, gr]
-  default_locale: fr
-
 collections:
   - name: "blog"
-    label: "Articles du Blog"
+    label: "Blog"
     folder: "blog"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    i18n: true
+    slug: "{{slug}}"
     fields:
-      - { label: "Langue", name: "lang", widget: "select", options: ["fr", "en", "nl", "gr"], default: "fr", i18n: true }
-      - { label: "Titre", name: "title", widget: "string", i18n: true }
-      - { label: "Date", name: "date", widget: "datetime", i18n: duplicate }
-      - { label: "Contenu", name: "body", widget: "markdown", i18n: true }
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Contenu", name: "body", widget: "markdown" }
+      - { label: "Image", name: "image", widget: "image" }
+
+  - name: "galerie"
+    label: "Galerie"
+    folder: "galerie"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
